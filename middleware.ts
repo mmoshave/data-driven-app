@@ -1,9 +1,16 @@
-import { clerkMiddleware } from '@clerk/nextjs/server'
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export default clerkMiddleware({
-  publicRoutes: ['/', '/products', '/api/products'],
-})
+export default clerkMiddleware();
 
 export const config = {
-  matcher: ['/((?!_next|.*\\..*).*)'],
-}
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - /_next
+     * - /static
+     * - /favicon.ico
+     * - /api (unless you want to protect those too)
+     */
+    '/((?!_next|static|favicon.ico).*)',
+  ],
+};
