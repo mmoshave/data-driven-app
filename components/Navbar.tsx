@@ -37,7 +37,7 @@ export default function Navbar() {
         flex: 1
       }}>
         {['/garage', '/wishlist', '/tips', '/brands'].map((path, i) => {
-          const label = ['MyGarage', 'Wishlist', 'Tips', 'Brands'][i];
+          const label = ['Garage', 'Wishlist', 'Tips', 'Brands'][i];
           return (
             <Link
               key={path}
