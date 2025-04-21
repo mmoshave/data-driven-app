@@ -120,7 +120,7 @@ export default function GaragePage() {
   })
 
   return (
-    <main style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#0b1120', color: '#fff', padding: '2rem' }}>
+    <main style={{ backgroundColor: '#0b1120', color: '#fff', minHeight: '100vh', padding: '2rem', textAlign: 'center', overflowX: 'hidden' }}>
       <img
         src="/empty-garage.jpg"
         alt="Garage Background"
