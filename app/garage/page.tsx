@@ -121,11 +121,22 @@ export default function GaragePage() {
 
   return (
 <main style={{ backgroundColor: '#0b1120', color: '#fff', minHeight: '100vh', padding: '2rem', textAlign: 'center', overflowX: 'hidden' }}>
-      <img
-        src="/empty-garage.jpg"
-        alt="Garage Background"
-        style={{ zIndex: 0, opacity: 0.12, position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
-      />
+<img
+  src="/empty-garage.jpg"
+  alt="Garage Background"
+  style={{
+    zIndex: 0,
+    opacity: 0.12,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    pointerEvents: 'none',
+  }}
+/>
+
       <div style={{ position: 'relative', zIndex: 1 }}>
         <h1 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold' }}>My Garage</h1>
 
@@ -182,7 +193,10 @@ export default function GaragePage() {
                 </div>
                 <h3 style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{v.make} {v.model} ({v.year})</h3>
                 <p style={{ marginBottom: '0.25rem' }}>{v.engine} Engine</p>
-                <p style={{ marginBottom: '0.75rem' }}>Mileage: {v.mileage.toLocaleString()} miles</p>
+                <p style={{ marginBottom: '0.75rem' }}>
+  Mileage: {v.mileage ? v.mileage.toLocaleString() : "N/A"} miles
+</p>
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: 'auto' }}>
                   <button onClick={() => handleEdit(v)} style={{ ...buttonStyle, background: '#2563eb', color: '#fff' }}>Edit</button>
                   <button onClick={() => handleDeleteRequest(v._id)} style={{ ...buttonStyle, background: '#dc2626', color: '#fff' }}>Delete</button>
